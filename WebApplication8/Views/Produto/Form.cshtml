@@ -1,0 +1,12 @@
+﻿@model CrudSimples.Models.Produto
+
+@using(Html.BeginForm("Adiciona", "Produto", FormMethod.Post))
+{
+    @Html.LabelFor(p => p.Nome)
+    @Html.TextBoxFor(p =>p.Nome)
+    
+    @Html.LabelFor(p => p.Descricao)
+    @Html.TextBoxFor(p => p.Descricao)
+    
+    <input type="submit" value="salvar" />
+}

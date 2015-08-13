@@ -1,0 +1,26 @@
+﻿@model List<CrudSimples.Models.Produto>
+@Html.ActionLink("Novo produto", "Form")
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        { 
+            foreach(CrudSimples.Models.Produto produto in Model)
+            {
+                <tr>
+                    <td>@produto.Id</td>
+                    <td>@produto.Nome</td>
+                    <td>@produto.Descricao</td>
+                    <td>@Html.ActionLink("Editar", "Edita", new { id = produto.Id })</td>
+                    <td>@Html.ActionLink("Excluir", "Exclui", new { id = produto.Id })</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

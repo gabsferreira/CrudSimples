@@ -1,0 +1,14 @@
+﻿@model CrudSimples.Models.Produto
+
+@using (Html.BeginForm("Altera", "Produto", FormMethod.Post))
+{
+    @Html.HiddenFor(p => p.Id)
+    
+    @Html.LabelFor(p => p.Nome)
+    @Html.TextBoxFor(p => p.Nome)
+
+    @Html.LabelFor(p => p.Descricao)
+    @Html.TextBoxFor(p => p.Descricao)
+
+    <input type="submit" value="salvar" />
+}
